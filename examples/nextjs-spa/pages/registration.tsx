@@ -96,8 +96,6 @@ const Registration: NextPage = () => {
         }
         router.push("/")
       })
-      .catch((error: AxiosError) => handleError(error))
-      // If the previous handler did not catch the error it's most likely a form validation error
       .catch((error: AxiosError) => {
         switch (error.response?.status) {
           case 400:
